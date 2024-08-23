@@ -2,12 +2,12 @@ Source: python3-cyberfusion-ferm-support
 Section: misc
 Priority: optional
 Maintainer: William Edwards <wedwards@cyberfusion.nl>
-Build-Depends: python3-all, dh-python, debhelper (>= 10), python3-setuptools
+Build-Depends: python3-all, dh-python, debhelper (>= 10), python3-setuptools, python3-cyberfusion-common, python3-cyberfusion-systemd-support
 Standards-Version: 4.3.0
 
 Package: python3-cyberfusion-ferm-support
 Architecture: all
 Recommends: ferm
-Depends: python3, python3-cyberfusion-common (>= 2.10.3), python3-cached-property, python3-cyberfusion-systemd-support, ${misc:Depends}
+Depends: python3, ${python3:Depends}, ${misc:Depends}
 Description: Library for ferm.
  Library for ferm.
