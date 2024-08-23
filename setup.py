@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="python3-cyberfusion-ferm-support",
-    version="1.1.2.1",
+    version="1.1.2.2",
     description="Library for ferm.",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -22,4 +22,9 @@ setup(
     ],
     package_dir={"": "src"},
     data_files=[],
+    install_requires=[
+        "cached_property==1.5.2",
+        "python3-cyberfusion-common~=2.0",
+        "python3-cyberfusion-systemd-support~=1.0",
+    ],
 )
