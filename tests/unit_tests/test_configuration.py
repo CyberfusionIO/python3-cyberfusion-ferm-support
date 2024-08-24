@@ -3,7 +3,6 @@ import os
 import pytest
 from pytest_mock import MockerFixture
 
-from cyberfusion.Common import get_tmp_file
 from cyberfusion.FermSupport.configuration import Configuration
 from cyberfusion.FermSupport.exceptions import ConfigInvalidError
 from cyberfusion.SystemdSupport.units import Unit
@@ -66,9 +65,7 @@ def test_configuration_save_changed_calls_restart(
 
     assert configuration.save() is True
 
-    spy_unit_init.assert_called_once_with(
-        mocker.ANY, f"ferm.{Unit.SUFFIX_SERVICE}"
-    )
+    spy_unit_init.assert_called_once_with(mocker.ANY, f"ferm.{Unit.SUFFIX_SERVICE}")
     spy_unit_restart.assert_called_once_with()
 
 
