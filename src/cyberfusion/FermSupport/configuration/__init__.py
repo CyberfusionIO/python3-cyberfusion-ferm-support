@@ -40,19 +40,14 @@ class Configuration:
     def __str__(self) -> str:
         """Get string representation."""
         return (
-            "\n".join(
-                [str(line) for line in self.variables + self.custom_lines]
-            )
-            + "\n"
+            "\n".join([str(line) for line in self.variables + self.custom_lines]) + "\n"
         )
 
     @property
     def is_valid(self) -> bool:
         """Get if config is valid."""
         try:
-            subprocess.run(
-                [find_executable("ferm"), "--noexec", self.path], check=True
-            )
+            subprocess.run([find_executable("ferm"), "--noexec", self.path], check=True)
         except subprocess.CalledProcessError:
             return False
 
