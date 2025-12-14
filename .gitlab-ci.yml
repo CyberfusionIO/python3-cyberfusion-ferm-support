@@ -17,7 +17,7 @@ stages:
 
 unit test and feature test:
   stage: test
-  image: python:3.11
+  image: python:3.13
   script:
     - !reference [.add repositories, script]
     - RUNLEVEL=1 DEBIAN_FRONTEND=noninteractive apt-get -o Dpkg::Options::="--force-confdef" -y install ferm
